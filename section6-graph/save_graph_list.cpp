@@ -1,3 +1,13 @@
+/**
+ * @file save_graph_list.cpp
+ * @author icecreamovo (www.icecreamovo.top)
+ * @brief 使用邻接表法存储图
+ * @version 0.1
+ * @date 2023-04-15
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 #include <bits/stdc++.h>
 #define MAX_NODE_NUM 100
 using namespace std;

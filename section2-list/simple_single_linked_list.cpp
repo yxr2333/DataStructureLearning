@@ -1,3 +1,13 @@
+/**
+ * @file simple_single_linked_list.cpp
+ * @author icecreamovo (www.icecreamovo.top)
+ * @brief 单链表的基本操作
+ * @version 0.1
+ * @date 2023-04-15
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 #include <bits/stdc++.h>
 #define N 100
 using namespace std;
@@ -18,6 +28,15 @@ void init(LinkedList *list)
     list->head->next = NULL;
     list->length = 0;
 }
+/**
+ * 该函数在链表的指定位置插入一个元素。
+ *
+ * @param list 指向将插入元素的链表的指针
+ * @param pos 给定数据的新节点需要插入到链表中的位置。
+ * @param data 要插入链表指定位置的数据。
+ *
+ * @return 该函数没有返回语句，因此它不返回任何内容。
+ */
 void insert(LinkedList *list, int pos, int data)
 {
     // 在单链表的第pos个位置插入元素data
@@ -49,7 +68,7 @@ void insert(LinkedList *list, int data)
     Node *q = (Node *)malloc(sizeof(Node));
     q->data = data;
     q->next = NULL;
-    p->next = q;
+    p->next = q; // 使用尾插法插入元素
     list->length++;
 }
 
@@ -84,6 +103,15 @@ void printList(LinkedList *list)
     cout << endl;
 }
 
+/**
+ * 此函数使用递归从链表中删除具有给定值的所有节点。
+ *
+ * @param list 指向 LinkedList 结构的指针
+ * @param curHead 指向链表当前头节点的指针
+ * @param val 需要从链表中移除的整数值。
+ *
+ * @return 此函数中没有显式返回任何内容。但是，当达到基本情况时（当 p 为 NULL 时），该函数会将控制权返回给调用函数。
+ */
 void removeVal(LinkedList *list, Node *curHead, int val)
 {
     Node *p = curHead->next;
@@ -94,7 +122,7 @@ void removeVal(LinkedList *list, Node *curHead, int val)
     if (p->data == val) // if we find the value
     {
         Node *q = p;
-        curHead->next = p->next;
+        curHead->next = p->next; // 删除节点就是将前一个节点的next指向当前节点的next
         free(q);
         list->length--;
         removeVal(list, curHead, val); // recursion

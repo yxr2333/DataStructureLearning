@@ -1,3 +1,13 @@
+/**
+ * @file save_graph_multi_list.cpp
+ * @author icecreamovo (www.icecreamovo.top)
+ * @brief 使用邻接多重表法存储无向图（适用于无向图）
+ * @version 0.1
+ * @date 2023-04-15
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 #include <bits/stdc++.h>
 #define N 100
 using namespace std;

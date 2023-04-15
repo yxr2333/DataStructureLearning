@@ -1,3 +1,13 @@
+/**
+ * @file circle_double_list.cpp
+ * @author icecreamovo (www.icecreamovo.top)
+ * @brief  双向循环链表相关操作的实现
+ * @version 0.1
+ * @date 2023-04-15
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
 #include <bits/stdc++.h>
 #define N 100
 using namespace std;
