@@ -1,3 +1,3 @@
-# 24 鑰冪爺鏁版嵁缁撴瀯澶嶄範
+# 24 考研数据结构复习
 
 # 文档：https://book.icecreamovo.top/
