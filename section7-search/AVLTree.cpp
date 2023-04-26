@@ -97,36 +97,43 @@ AVLTreeNode *leftRotate(AVLTreeNode *root)
  */
 AVLTreeNode *balanceAVL(AVLTreeNode *root)
 {
-    // 计算平衡因子
-    int balanceFactor = getBalanceFactor(root);
+    while (root != NULL)
+    {
+        // 计算平衡因子
+        int balanceFactor = getBalanceFactor(root);
 
-    // 进行平衡调整
-    if (balanceFactor > 1)
-    {
-        if (getBalanceFactor(root->left) >= 0)
+        // 进行平衡调整
+        if (balanceFactor > 1) // 左子树比右子树高
         {
-            // LL型，右旋操作
-            root = rightRotate(root);
+            if (getBalanceFactor(root->left) >= 0) // LL
+            {
+                // LL型，右旋操作
+                root = rightRotate(root);
+            }
+            else
+            {
+                // LR型，先对左子节点进行左旋操作，再对根节点进行右旋操作
+                root->left = leftRotate(root->left);
+                root = rightRotate(root);
+            }
+        }
+        else if (balanceFactor < -1)
+        {
+            if (getBalanceFactor(root->right) <= 0)
+            {
+                // RR型，左旋操作
+                root = leftRotate(root);
+            }
+            else
+            {
+                // RL型，先对右子节点进行右旋操作，再对根节点进行左旋操作
+                root->right = rightRotate(root->right);
+                root = leftRotate(root);
+            }
         }
         else
         {
-            // LR型，先对左子节点进行左旋操作，再对根节点进行右旋操作
-            root->left = leftRotate(root->left);
-            root = rightRotate(root);
-        }
-    }
-    else if (balanceFactor < -1)
-    {
-        if (getBalanceFactor(root->right) <= 0)
-        {
-            // RR型，左旋操作
-            root = leftRotate(root);
-        }
-        else
-        {
-            // RL型，先对右子节点进行右旋操作，再对根节点进行左旋操作
-            root->right = rightRotate(root->right);
-            root = leftRotate(root);
+            break;
         }
     }
 
