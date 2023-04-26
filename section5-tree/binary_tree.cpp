@@ -1,7 +1,7 @@
 /**
  * @file binary_tree.cpp
  * @author icecreamovo (www.icecreamovo.top)
- * @brief 二叉树的链式实现
+ * @brief Linked Binary Tree Implementation
  * @version 0.1
  * @date 2023-04-25
  *
