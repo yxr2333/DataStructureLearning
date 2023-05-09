@@ -9,6 +9,7 @@ typedef struct Person
 vector<Person> L;
 int main()
 {
+
     int id;
     cout << "请输入你想查找的人的id: ";
     cin >> id;
