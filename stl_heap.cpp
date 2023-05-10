@@ -4,8 +4,25 @@ using namespace std;
 int main()
 {
     vector<int> num = {2, 3, 1, 5, 4};
-    make_heap(num.begin(), num.end());
+    auto cmp = [](int a, int b) -> bool
+    { return a > b; };
+    make_heap(num.begin(), num.end(), cmp);
     for (int i = 0; i < num.size(); i++)
+    {
+        cout << num[i] << " ";
+    }
+    cout << endl;
+    sort_heap(num.begin(), num.end(), cmp);
+    for (int i = 0; i < num.size(); i++)
+    {
+        cout << num[i] << " ";
+    }
+    cout << endl;
+    system("pause");
+    return 0;
+}
+/*
+for (int i = 0; i < num.size(); i++)
     {
         cout << num[i] << " ";
     }
@@ -19,6 +36,4 @@ int main()
     {
         cout << num[i] << " ";
     }
-    system("pause");
-    return 0;
-}
+*/

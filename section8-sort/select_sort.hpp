@@ -15,7 +15,10 @@ class SelectSort
 public:
     void normal_select_sort(vector<int> &data);
     void heap_sort(vector<int> &data);
-    void heap_adjust(vector<int> &data, int start, int len);
+    void heap_adjust_down(vector<int> &data, int start, int len);
+    void heap_adjust_up(vector<int> &data, int start, int len);
     void establish_heap(vector<int> &data);
+    void insert_into_heap(vector<int> &data, int value);
+    void delete_from_heap(vector<int> &data, int index);
     void print(vector<int> &data);
 };
